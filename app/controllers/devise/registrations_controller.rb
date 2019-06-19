@@ -5,6 +5,8 @@ class Devise::RegistrationsController < DeviseController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :destroy]
   prepend_before_action :set_minimum_password_length, only: [:new, :edit]
 
+  respond_to :html, :json
+
   # GET /resource/sign_up
   def new
     build_resource
